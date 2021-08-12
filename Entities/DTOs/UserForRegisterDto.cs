@@ -14,7 +14,7 @@ namespace Entities.DTOs
         public string LastName { get; set; }
         public string CompanyPhone { get; set; }
         public string PersonalPhone { get; set; }
-        public string Adress { get; set; }
+        public string City { get; set; }
         public string FullAdress { get; set; }
         //public DateTime LastLogin { get; set; }
         //public string ResetPassword { get; set; }

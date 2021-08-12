@@ -29,7 +29,7 @@ namespace Business.Concrete
             var user = new User
             {
                 SponsorId = userForRegisterDto.SponsorId,
-                Adress = userForRegisterDto.Adress,
+                City = userForRegisterDto.City,
                 FullAdress = userForRegisterDto.FullAdress,
                 PersonalPhone = userForRegisterDto.PersonalPhone,
                 CompanyPhone = userForRegisterDto.CompanyPhone,
