@@ -5,12 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
-    <Folder Include="BusinessAspect\" />
-    <Folder Include="Concrete\" />
-    <Folder Include="Constants\" />
-    <Folder Include="DependencyResolvers\" />
-    <Folder Include="ValidationRules\" />
+    <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="..\Entities\Entities.csproj" />
   </ItemGroup>
 
 </Project>
