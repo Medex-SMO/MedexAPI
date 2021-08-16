@@ -23,6 +23,24 @@ namespace Business.DependencyResolvers.Autofac
             builder.RegisterType<SponsorManager>().As<ISponsorService>().SingleInstance();
             builder.RegisterType<EfSponsorDal>().As<ISponsorDal>().SingleInstance();
 
+            builder.RegisterType<ActionManager>().As<IActionService>().SingleInstance();
+            builder.RegisterType<EfActionDal>().As<IActionDal>().SingleInstance();
+
+            builder.RegisterType<AssignmentManager>().As<IAssignmentService>().SingleInstance();
+            builder.RegisterType<EfAssignmentDal>().As<IAssignmentDal>().SingleInstance();
+
+            builder.RegisterType<EquipmentManager>().As<IEquipmentService>().SingleInstance();
+            builder.RegisterType<EfEquipmentDal>().As<IEquipmentDal>().SingleInstance();
+
+            builder.RegisterType<PatientManager>().As<IPatientService>().SingleInstance();
+            builder.RegisterType<EfPatientDal>().As<IPatientDal>().SingleInstance();
+
+            builder.RegisterType<SiteManager>().As<ISiteService>().SingleInstance();
+            builder.RegisterType<EfSiteDal>().As<ISiteDal>().SingleInstance();
+
+            builder.RegisterType<StudyManager>().As<IStudyService>().SingleInstance();
+            builder.RegisterType<EfStudyDal>().As<IStudyDal>().SingleInstance();
+
             builder.RegisterType<AuthManager>().As<IAuthService>();
             builder.RegisterType<JwtHelper>().As<ITokenHelper>();
 

@@ -17,5 +17,11 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<User> Users { get; set; }
         public DbSet<UserOperationClaim> UserOperationClaims { get; set; }
         public DbSet<Sponsor> Sponsors { get; set; }
+        public DbSet<Equipment> Equipments { get; set; }
+        public DbSet<Study> Studies { get; set; }
+        public DbSet<Site> Sites { get; set; }
+        public DbSet<Patient> Patients { get; set; }
+        public DbSet<Assignment> Assignments { get; set; }
+        public DbSet<Entities.Concrete.Action> Actions { get; set; }
     }
 }
