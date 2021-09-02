@@ -12,7 +12,10 @@ namespace Business.Constants
         public static string PasswordError = "Wrong password!";
         public static string SuccessfulLogin = "Signed in";
         public static string UserAlreadyExists = "User already exists";
-        public static string AccessTokenCreated = "Access token created";
+        public static string AccessTokenCreated = "Logged in";
+        public static string AddedUser = "User added";
+        public static string DeletedUser = "User deleted";
+        public static string UpdatedUser = "User updated";
 
         public static string SponsorAdded = "The sponsor has been added to DB.";
         public static string SponsorDeleted = "The sponsor has been deleted to DB.";
@@ -48,5 +51,6 @@ namespace Business.Constants
         public static string StudyDeleted = "The study has been deleted to DB.";
         public static string StudyListed = "Study listed.";
         public static string StudyUpdated = "The study has been updated to DB.";
+
     }
 }
