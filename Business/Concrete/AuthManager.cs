@@ -28,11 +28,6 @@ namespace Business.Concrete
             HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
             var user = new User
             {
-                SponsorId = userForRegisterDto.SponsorId,
-                City = userForRegisterDto.City,
-                FullAdress = userForRegisterDto.FullAdress,
-                PersonalPhone = userForRegisterDto.PersonalPhone,
-                CompanyPhone = userForRegisterDto.CompanyPhone,
                 Email = userForRegisterDto.Email,
                 FirstName = userForRegisterDto.FirstName,
                 LastName = userForRegisterDto.LastName,
@@ -62,10 +57,10 @@ namespace Business.Concrete
 
         public IResult UserExists(string email)
         {
-            if (_userService.GetByMail(email) != null)
-            {
-                return new ErrorResult(Messages.UserAlreadyExists);
-            }
+            var userResult = _userService.GetByMail(email);
+            if (!userResult.Success) return new ErrorResult(userResult.Message);
+            if (userResult.Data != null) return new ErrorResult(Messages.UserAlreadyExists);
+
             return new SuccessResult();
         }
 

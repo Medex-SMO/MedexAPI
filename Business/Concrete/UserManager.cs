@@ -20,7 +20,7 @@ namespace Business.Concrete
             _userDal = userDal;
         }
 
-        IResult IUserService.Add(User user)
+        public IResult Add(User user)
         {
             _userDal.Add(user);
             return new SuccessResult(Messages.AddedUser);
