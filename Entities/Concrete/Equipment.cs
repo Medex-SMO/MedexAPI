@@ -10,7 +10,7 @@ namespace Entities.Concrete
         public int Id { get; set; }
         public int UserId { get; set; }
         public string Name { get; set; }
-        public string SerialName { get; set; }
+        public string SerialNo { get; set; }
         public string Amount { get; set; }
     }
 }
