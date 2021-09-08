@@ -10,7 +10,6 @@ namespace Entities.Concrete
         public int Id { get; set; }
         public int AssignId { get; set; }
         public int PatientId { get; set; }
-        public int TypeId { get; set; }
         public string VisitType { get; set; }
         public DateTime ActionDate { get; set; }
         public DateTime PlanDate { get; set; }
