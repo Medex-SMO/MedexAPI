@@ -73,5 +73,16 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpGet("getsitesdetails")]
+        public IActionResult GetSitesDetails()
+        {
+            var result = _siteService.GetSitesDetails();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }

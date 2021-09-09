@@ -7,6 +7,7 @@ using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -47,6 +48,12 @@ namespace Business.Concrete
         public IDataResult<Site> GetById(int id)
         {
             return new SuccessDataResult<Site>(_siteDal.Get(b => b.Id == id));
+        }
+
+        [CacheAspect]
+        public IDataResult<List<SiteDetailDto>> GetSitesDetails()
+        {
+            return new SuccessDataResult<List<SiteDetailDto>>(_siteDal.GetSitesDetails());
         }
 
         [SecuredOperation("superuser")]
