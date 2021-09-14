@@ -1,4 +1,5 @@
 ﻿using Core.Utilities.Results;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,5 +13,6 @@ namespace Business.Abstract
         IResult Delete(Entities.Concrete.Action action);
         IDataResult<Entities.Concrete.Action> GetById(int id);
         IDataResult<List<Entities.Concrete.Action>> GetAll();
+        IDataResult<List<ActionDetailDto>> GetActionsDetails();
     }
 }

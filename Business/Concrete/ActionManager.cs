@@ -7,6 +7,7 @@ using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -35,6 +36,12 @@ namespace Business.Concrete
         {
             _actionDal.Delete(action);
             return new SuccessResult(Messages.ActionDeleted);
+        }
+
+        [CacheAspect]
+        public IDataResult<List<ActionDetailDto>> GetActionsDetails()
+        { 
+            return new SuccessDataResult<List<ActionDetailDto>>(_actionDal.GetActionsDetails());
         }
 
         [CacheAspect]
