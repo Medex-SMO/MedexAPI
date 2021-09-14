@@ -73,5 +73,16 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpGet("getpatientsdetails")]
+        public IActionResult GetPatientsDetails()
+        {
+            var result = _patientService.GetPatientsDetails();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }
