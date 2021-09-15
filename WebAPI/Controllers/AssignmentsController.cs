@@ -73,5 +73,16 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpGet("getassignmentsdetails")]
+        public IActionResult GetAssignmentsDetails()
+        {
+            var result = _assignmentService.GetAssignmentsDetails();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }
