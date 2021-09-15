@@ -73,5 +73,16 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpGet("getequipmentsdetails")]
+        public IActionResult GetEquipmentsDetails()
+        {
+            var result = _equipmentService.GetEquipmentsDetails();
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
     }
 }
