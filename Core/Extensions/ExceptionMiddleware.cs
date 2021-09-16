@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Net;
@@ -48,6 +49,19 @@ namespace Core.Extensions
                     StatusCode = 400,
                     Message = message,
                     Errors = errors
+                }.ToString());
+            }
+
+            else if (e.GetType() == typeof(DbUpdateException))
+            {
+                message = e.Message;
+                string[] error = ((DbUpdateException)e).InnerException.Message.Split('_');
+                httpContext.Response.StatusCode = 400;
+
+                return httpContext.Response.WriteAsync(new ErrorDetails
+                {
+                    StatusCode = 400,
+                    Message =  "Cannot delete because it is linked to " + error[1] + " table." 
                 }.ToString());
             }
 
