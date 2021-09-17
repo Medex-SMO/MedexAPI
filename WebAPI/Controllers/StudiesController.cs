@@ -74,6 +74,18 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("getstudiesbysponsorid")]
+        public IActionResult GetStudiesBySponsorId(int id)
+        {
+            var result = _studyService.GetStudiesBySponsorId(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
+
         [HttpGet("getstudiesdetails")]
         public IActionResult GetStudiesDetails()
         {

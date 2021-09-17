@@ -45,6 +45,12 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
+        public IDataResult<List<Study>> GetStudiesBySponsorId(int sponsorId)
+        {
+            return new SuccessDataResult<List<Study>>(_studyDal.GetAll(s => s.SponsorId == sponsorId));
+        }
+
+        [CacheAspect]
         public IDataResult<Study> GetById(int id)
         {
             return new SuccessDataResult<Study>(_studyDal.Get(b => b.Id == id));

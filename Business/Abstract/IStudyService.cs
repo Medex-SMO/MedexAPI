@@ -14,6 +14,7 @@ namespace Business.Abstract
         IResult Delete(Study study);
         IDataResult<Study> GetById(int id);
         IDataResult<List<Study>> GetAll();
+        IDataResult<List<Study>> GetStudiesBySponsorId(int sponsorId);
         IDataResult<List<StudyDetailDto>> GetStudiesDetails();
     }
 }
