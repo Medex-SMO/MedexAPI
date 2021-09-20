@@ -8,7 +8,8 @@ namespace Entities.DTOs
     public class PatientDetailDto : IDto
     {
         public int Id { get; set; }
-        public string HospitalName { get; set; }
+        public string SiteName { get; set; }
+        public string SiteCode { get; set; }
         public string StudyCode { get; set; }
         public string No { get; set; }
     }

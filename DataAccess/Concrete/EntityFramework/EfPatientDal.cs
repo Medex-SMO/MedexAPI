@@ -23,7 +23,8 @@ namespace DataAccess.Concrete.EntityFramework
                              select new PatientDetailDto
                              {
                                  Id = patients.Id,
-                                 HospitalName = sites.HospitalName,
+                                 SiteName = sites.HospitalName,
+                                 SiteCode = sites.Number,
                                  StudyCode = studies.Code,
                                  No = patients.No
                              };

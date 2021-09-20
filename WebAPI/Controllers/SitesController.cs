@@ -63,6 +63,18 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("getsitesbystudyid")]
+        public IActionResult GetSitesByStudyId(int id)
+        {
+            var result = _siteService.GetSitesByStudyId(id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
+
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
