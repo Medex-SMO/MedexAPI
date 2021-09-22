@@ -23,5 +23,6 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Assignment> Assignments { get; set; }
         public DbSet<Entities.Concrete.Action> Actions { get; set; }
+        public DbSet<City> Cities { get; set; }
     }
 }

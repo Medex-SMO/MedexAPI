@@ -52,5 +52,9 @@ namespace Business.Constants
         public static string StudyListed = "Study listed.";
         public static string StudyUpdated = "The study has been updated to DB.";
 
+        public static string CityAdded = "The study has been added to DB.";
+        public static string CityDeleted = "The study has been deleted to DB.";
+        public static string CityListed = "Study listed.";
+        public static string CityUpdated = "The study has been updated to DB.";
     }
 }
