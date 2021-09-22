@@ -11,6 +11,7 @@ namespace Business.ValidationRules.FluentValidation
         public SiteValidator()
         {
             RuleFor(s => s.StudyId).NotEmpty();
+            RuleFor(s => s.CraMail).EmailAddress();
         }
     }
 }

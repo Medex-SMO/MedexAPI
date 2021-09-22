@@ -20,16 +20,22 @@ namespace DataAccess.Concrete.EntityFramework
                                  on sites.StudyId equals studies.Id
                              join sponsors in context.Sponsors
                              on studies.SponsorId equals sponsors.Id
+                             join cities in context.Cities
+                             on sites.CityId equals cities.Id
                              select new SiteDetailDto
                              {
                                  Id = sites.Id,
+                                 CityName = cities.Name,
                                  StudyCode = studies.Code,
                                  StudyName = studies.Name,
                                  StudySponsorName = sponsors.Name,
                                  Number = sites.Number,
                                  HospitalName = sites.HospitalName,
                                  Department = sites.Department,
-                                 Investigator = sites.Investigator
+                                 Investigator = sites.Investigator,
+                                 CraName = sites.CraName,
+                                 CraMail = sites.CraMail,
+                                 CraMobile = sites.CraMobile
                              };
                 return filter == null ? result.ToList() : result.Where(filter).ToList();
             }

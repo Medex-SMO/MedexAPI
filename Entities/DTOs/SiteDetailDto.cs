@@ -8,6 +8,7 @@ namespace Entities.DTOs
     public class SiteDetailDto : IDto
     {
         public int Id { get; set; }
+        public string CityName { get; set; }
         public string StudyCode { get; set; }
         public string StudyName { get; set; }
         public string StudySponsorName { get; set; }
@@ -15,5 +16,8 @@ namespace Entities.DTOs
         public string HospitalName { get; set; }
         public string Department { get; set; }
         public string Investigator { get; set; }
+        public string CraName { get; set; }
+        public string CraMail { get; set; }
+        public string CraMobile { get; set; }
     }
 }
