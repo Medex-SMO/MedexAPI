@@ -13,6 +13,7 @@ namespace Business.Abstract
         IResult Update(Patient patient);
         IResult Delete(Patient patient);
         IDataResult<Patient> GetById(int id);
+        IDataResult<List<Patient>> GetPatientsBySiteId(int siteId);
         IDataResult<List<Patient>> GetAll();
         IDataResult<List<PatientDetailDto>> GetPatientsDetails();
     }

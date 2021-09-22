@@ -50,6 +50,11 @@ namespace Business.Concrete
             return new SuccessDataResult<Patient>(_patientDal.Get(b => b.Id == id));
         }
 
+        public IDataResult<List<Patient>> GetPatientsBySiteId(int siteId)
+        {
+            return new SuccessDataResult<List<Patient>>(_patientDal.GetAll(s => s.SiteId == siteId));
+        }
+
         [CacheAspect]
         public IDataResult<List<PatientDetailDto>> GetPatientsDetails()
         {
