@@ -9,7 +9,7 @@ namespace Entities.DTOs
     {
         public int Id { get; set; }
         public string CraName { get; set; }
-        public string PatientNo { get; set; }
+        public string SubjectNo { get; set; }
         public string VisitType { get; set; }
         public DateTime ActionDate { get; set; }
         public DateTime PlanDate { get; set; }

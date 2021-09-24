@@ -9,6 +9,6 @@ namespace Entities.Concrete
     {
         public int Id { get; set; }
         public int SiteId { get; set; }
-        public string No { get; set; }
+        public string SubjectNo { get; set; }
     }
 }

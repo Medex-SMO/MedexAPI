@@ -24,7 +24,7 @@ namespace DataAccess.Concrete.EntityFramework
                              {
                                  Id = action.Id,
                                  CraName = assignment.CraName,
-                                 PatientNo = patients.No,
+                                 SubjectNo = patients.SubjectNo,
                                  VisitType = action.VisitType,
                                  ActionDate = action.ActionDate,
                                  PlanDate = action.PlanDate,

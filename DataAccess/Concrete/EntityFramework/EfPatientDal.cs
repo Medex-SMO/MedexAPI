@@ -26,7 +26,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  SiteName = sites.SiteName,
                                  SiteNumber = sites.SiteNumber,
                                  ProtocolCode = studies.ProtocolCode,
-                                 No = patients.No
+                                 SubjectNo = patients.SubjectNo
                              };
                 return filter == null ? result.ToList() : result.Where(filter).ToList();
             }
