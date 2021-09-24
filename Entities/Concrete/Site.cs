@@ -10,8 +10,8 @@ namespace Entities.Concrete
         public int Id { get; set; }
         public int StudyId { get; set; }
         public int CityId { get; set; }
-        public string Number { get; set; }
-        public string HospitalName { get; set; }
+        public string SiteNumber { get; set; }
+        public string SiteName { get; set; }
         public string Department { get; set; }
         public string Investigator { get; set; }
         public string CraName { get; set; }

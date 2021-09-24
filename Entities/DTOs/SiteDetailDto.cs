@@ -12,8 +12,8 @@ namespace Entities.DTOs
         public string ProtocolCode { get; set; }
         public string StudyName { get; set; }
         public string StudySponsorName { get; set; }
-        public string Number { get; set; }
-        public string HospitalName { get; set; }
+        public string SiteNumber { get; set; }
+        public string SiteName { get; set; }
         public string Department { get; set; }
         public string Investigator { get; set; }
         public string CraName { get; set; }

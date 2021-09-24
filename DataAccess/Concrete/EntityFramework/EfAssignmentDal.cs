@@ -23,7 +23,7 @@ namespace DataAccess.Concrete.EntityFramework
                              select new AssignmentDetailDto
                              {
                                  Id = assignment.Id,
-                                 HospitalName = site.HospitalName,
+                                 SiteNumber = site.SiteNumber,
                                  Email = users.Email,
                                  CraName = assignment.CraName,
                                  Status = assignment.Status
