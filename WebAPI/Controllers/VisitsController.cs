@@ -10,19 +10,19 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ActionsController : ControllerBase
+    public class VisitsController : ControllerBase
     {
-        IActionService _actionService;
+        IVisitService _visitService;
 
-        public ActionsController(IActionService actionService)
+        public VisitsController(IVisitService visitService)
         {
-            _actionService = actionService;
+            _visitService = visitService;
         }
 
         [HttpPost("add")]
-        public IActionResult Add(Entities.Concrete.Action action)
+        public IActionResult Add(Visit visit)
         {
-            var result = _actionService.Add(action);
+            var result = _visitService.Add(visit);
             if (result.Success)
             {
                 return Ok(result);
@@ -31,9 +31,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("update")]
-        public IActionResult Update(Entities.Concrete.Action action)
+        public IActionResult Update(Visit visit)
         {
-            var result = _actionService.Update(action);
+            var result = _visitService.Update(visit);
             if (result.Success)
             {
                 return Ok(result);
@@ -42,9 +42,9 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("delete")]
-        public IActionResult Delete(Entities.Concrete.Action action)
+        public IActionResult Delete(Visit visit)
         {
-            var result = _actionService.Delete(action);
+            var result = _visitService.Delete(visit);
             if (result.Success)
             {
                 return Ok(result);
@@ -55,7 +55,7 @@ namespace WebAPI.Controllers
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            var result = _actionService.GetById(id);
+            var result = _visitService.GetById(id);
             if (result.Success)
             {
                 return Ok(result);
@@ -66,7 +66,7 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _actionService.GetAll();
+            var result = _visitService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -74,10 +74,10 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [HttpGet("getactionsdetails")]
-        public IActionResult GetActionsDetails()
+        [HttpGet("getvisitsdetails")]
+        public IActionResult GetVisitsDetails()
         {
-            var result = _actionService.GetActionsDetails();
+            var result = _visitService.GetVisitsDetails();
             if (result.Success)
             {
                 return Ok(result);

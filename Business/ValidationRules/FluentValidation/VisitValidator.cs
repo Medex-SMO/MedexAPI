@@ -6,9 +6,9 @@ using System.Text;
 
 namespace Business.ValidationRules.FluentValidation
 {
-    public class ActionValidator : AbstractValidator<Entities.Concrete.Action>
+    public class VisitValidator : AbstractValidator<Visit>
     {
-        public ActionValidator()
+        public VisitValidator()
         {
 
         }

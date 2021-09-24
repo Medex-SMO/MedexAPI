@@ -8,8 +8,8 @@ using System.Text;
 
 namespace DataAccess.Abstract
 {
-    public interface IActionDal : IEntityRepository<Entities.Concrete.Action>
+    public interface IVisitDal : IEntityRepository<Visit>
     {
-        List<ActionDetailDto> GetActionsDetails(Expression<Func<ActionDetailDto, bool>> filter = null);
+        List<VisitDetailDto> GetVisitsDetails(Expression<Func<VisitDetailDto, bool>> filter = null);
     }
 }

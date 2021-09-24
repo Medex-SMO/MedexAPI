@@ -22,10 +22,10 @@ namespace Business.Constants
         public static string SponsorListed = "Sponsor listed.";
         public static string SponsorUpdated = "The sponsor has been updated to DB.";
 
-        public static string ActionAdded = "The action has been added to DB.";
-        public static string ActionDeleted = "The action has been deleted to DB.";
-        public static string ActionListed = "Action listed.";
-        public static string ActionUpdated = "The action has been updated to DB.";
+        public static string VisitAdded = "The visit has been added to DB.";
+        public static string VisitDeleted = "The visit has been deleted to DB.";
+        public static string VisitListed = "Visit listed.";
+        public static string VisitUpdated = "The visit has been updated to DB.";
 
         public static string AssignmentAdded = "The assignment has been added to DB.";
         public static string AssignmentDeleted = "The assignment has been deleted to DB.";

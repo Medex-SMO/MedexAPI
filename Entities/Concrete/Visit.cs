@@ -1,14 +1,14 @@
-﻿using Core;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Entities.DTOs
+namespace Entities.Concrete
 {
-    public class ActionDetailDto : IDto
+    public class Visit : IEntity
     {
         public int Id { get; set; }
-        public string SubjectNo { get; set; }
+        public int PatientId { get; set; }
         public string VisitNo { get; set; }
         public DateTime VisitDate { get; set; }
         public int TimeSpent { get; set; }
