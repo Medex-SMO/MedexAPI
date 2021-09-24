@@ -15,21 +15,17 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (var context = new MedexDbContext())
             {
-                var result = from action in context.Actions
-                             join assignment in context.Assignments
-                                 on action.AssignId equals assignment.Id
+                var result = from action in context.Visits
                              join patients in context.Patients
                              on action.PatientId equals patients.Id
                              select new ActionDetailDto
                              {
                                  Id = action.Id,
-                                 CraName = assignment.CraName,
                                  SubjectNo = patients.SubjectNo,
-                                 VisitType = action.VisitType,
-                                 ActionDate = action.ActionDate,
-                                 PlanDate = action.PlanDate,
-                                 Duration = action.Duration,
-                                 Details = action.Details,
+                                 VisitNo = action.VisitNo,
+                                 VisitDate = action.VisitDate,
+                                 TimeSpent = action.TimeSpent,
+                                 Description = action.Description
                              };
                 return filter == null ? result.ToList() : result.Where(filter).ToList();
             }

@@ -8,12 +8,10 @@ namespace Entities.Concrete
     public class Action : IEntity
     {
         public int Id { get; set; }
-        public int AssignId { get; set; }
         public int PatientId { get; set; }
-        public string VisitType { get; set; }
-        public DateTime ActionDate { get; set; }
-        public DateTime PlanDate { get; set; }
-        public int Duration { get; set; }
-        public string Details { get; set; }
+        public string VisitNo { get; set; }
+        public DateTime VisitDate { get; set; }
+        public int TimeSpent { get; set; }
+        public string Description { get; set; }
     }
 }

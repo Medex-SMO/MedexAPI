@@ -8,12 +8,10 @@ namespace Entities.DTOs
     public class ActionDetailDto : IDto
     {
         public int Id { get; set; }
-        public string CraName { get; set; }
         public string SubjectNo { get; set; }
-        public string VisitType { get; set; }
-        public DateTime ActionDate { get; set; }
-        public DateTime PlanDate { get; set; }
-        public int Duration { get; set; }
-        public string Details { get; set; }
+        public string VisitNo { get; set; }
+        public DateTime VisitDate { get; set; }
+        public int TimeSpent { get; set; }
+        public string Description { get; set; }
     }
 }

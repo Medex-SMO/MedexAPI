@@ -22,7 +22,7 @@ namespace DataAccess.Concrete.EntityFramework
         public DbSet<Site> Sites { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Assignment> Assignments { get; set; }
-        public DbSet<Entities.Concrete.Action> Actions { get; set; }
+        public DbSet<Entities.Concrete.Action> Visits { get; set; }
         public DbSet<City> Cities { get; set; }
     }
 }
