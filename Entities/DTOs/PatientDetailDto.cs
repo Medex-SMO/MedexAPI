@@ -10,7 +10,7 @@ namespace Entities.DTOs
         public int Id { get; set; }
         public string SiteName { get; set; }
         public string SiteCode { get; set; }
-        public string StudyCode { get; set; }
+        public string ProtocolCode { get; set; }
         public string No { get; set; }
     }
 }

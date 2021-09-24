@@ -9,8 +9,8 @@ namespace Entities.Concrete
     {
         public int Id { get; set; }
         public int SponsorId { get; set; }
-        public string Code { get; set; }
-        public string Name { get; set; }
+        public string ProtocolCode { get; set; }
+        public string StudyName { get; set; }
         public string Indication { get; set; }
     }
 }

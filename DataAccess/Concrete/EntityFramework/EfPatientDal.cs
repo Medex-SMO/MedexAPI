@@ -25,7 +25,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  Id = patients.Id,
                                  SiteName = sites.HospitalName,
                                  SiteCode = sites.Number,
-                                 StudyCode = studies.Code,
+                                 ProtocolCode = studies.ProtocolCode,
                                  No = patients.No
                              };
                 return filter == null ? result.ToList() : result.Where(filter).ToList();

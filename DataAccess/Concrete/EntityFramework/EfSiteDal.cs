@@ -26,8 +26,8 @@ namespace DataAccess.Concrete.EntityFramework
                              {
                                  Id = sites.Id,
                                  CityName = cities.Name,
-                                 StudyCode = studies.Code,
-                                 StudyName = studies.Name,
+                                 ProtocolCode = studies.ProtocolCode,
+                                 StudyName = studies.StudyName,
                                  StudySponsorName = sponsors.Name,
                                  Number = sites.Number,
                                  HospitalName = sites.HospitalName,

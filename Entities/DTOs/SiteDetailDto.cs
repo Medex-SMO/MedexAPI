@@ -9,7 +9,7 @@ namespace Entities.DTOs
     {
         public int Id { get; set; }
         public string CityName { get; set; }
-        public string StudyCode { get; set; }
+        public string ProtocolCode { get; set; }
         public string StudyName { get; set; }
         public string StudySponsorName { get; set; }
         public string Number { get; set; }

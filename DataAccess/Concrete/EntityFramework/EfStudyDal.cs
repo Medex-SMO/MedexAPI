@@ -22,8 +22,8 @@ namespace DataAccess.Concrete.EntityFramework
                              {
                                  Id = studies.Id,
                                  SponsorName = sponsors.Name,
-                                 Code = studies.Code,
-                                 Name = studies.Name,
+                                 ProtocolCode = studies.ProtocolCode,
+                                 StudyName = studies.StudyName,
                                  Indication = studies.Indication
                              };
                 return filter == null ? result.ToList() : result.Where(filter).ToList();

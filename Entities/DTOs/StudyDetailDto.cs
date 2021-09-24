@@ -9,8 +9,8 @@ namespace Entities.DTOs
     {
         public int Id { get; set; }
         public string SponsorName { get; set; }
-        public string Code { get; set; }
-        public string Name { get; set; }
+        public string ProtocolCode { get; set; }
+        public string StudyName { get; set; }
         public string Indication { get; set; }
     }
 }
