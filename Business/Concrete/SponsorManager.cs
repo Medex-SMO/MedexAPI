@@ -21,7 +21,7 @@ namespace Business.Concrete
             _sponsorDal = sponsorDal;
         }
         [ValidationAspect(typeof(SponsorValidator))]
-        [SecuredOperation("superuser")]
+        [SecuredOperation("sponsor.add,superuser")]
         [CacheRemoveAspect("ISponsorService.Get")]
         public IResult Add(Sponsor sponsor)
         {
@@ -29,7 +29,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.SponsorAdded);
         }
 
-        [SecuredOperation("superuser")]
+        [SecuredOperation("sponsor.delete,superuser")]
         [CacheRemoveAspect("ISponsorService.Get")]
         public IResult Delete(Sponsor sponsor)
         {
@@ -49,7 +49,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Sponsor>(_sponsorDal.Get(b => b.Id == id));
         }
 
-        [SecuredOperation("superuser")]
+        [SecuredOperation("sponsor.update,superuser")]
         [CacheRemoveAspect("ISponsorService.Get")]
         public IResult Update(Sponsor sponsor)
         {

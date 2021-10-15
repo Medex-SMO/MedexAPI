@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Business.BusinessAspect.Autofac;
 using Business.Constants;
 using Business.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
@@ -21,6 +22,7 @@ namespace Business.Concrete
         }
 
         [ValidationAspect(typeof(UserValidator))]
+        [SecuredOperation("user.add,superuser")]
         public IResult Add(User user)
         {
             _userDal.Add(user);
@@ -28,6 +30,7 @@ namespace Business.Concrete
             //_userDal.UserRoleAdd(user);
         }
 
+        [SecuredOperation("user.delete,superuser")]
         public IResult Delete(User user)
         {
             _userDal.Delete(user);
@@ -54,6 +57,7 @@ namespace Business.Concrete
             return _userDal.GetClaims(user);
         }
 
+        [SecuredOperation("user.update,superuser")]
         public IResult Update(User user)
         {
             _userDal.Update(user);

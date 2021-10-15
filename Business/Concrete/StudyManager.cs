@@ -22,7 +22,7 @@ namespace Business.Concrete
             _studyDal = studyDal;
         }
         [ValidationAspect(typeof(StudyValidator))]
-        [SecuredOperation("superuser")]
+        [SecuredOperation("study.add,superuser")]
         [CacheRemoveAspect("IStudyService.Get")]
         public IResult Add(Study study)
         {
@@ -30,7 +30,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.StudyAdded);
         }
 
-        [SecuredOperation("superuser")]
+        [SecuredOperation("study.delete,superuser")]
         [CacheRemoveAspect("IStudyService.Get")]
         public IResult Delete(Study study)
         {
@@ -62,7 +62,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<StudyDetailDto>>(_studyDal.GetStudiesDetails());
         }
 
-        [SecuredOperation("superuser")]
+        [SecuredOperation("study.update,superuser")]
         [CacheRemoveAspect("IStudyService.Get")]
         public IResult Update(Study study)
         {

@@ -11,6 +11,7 @@ namespace Business.ValidationRules.FluentValidation
         public SponsorValidator()
         {
             RuleFor(s => s.Name).NotEmpty();
+            RuleFor(s => s.Name).MinimumLength(2);
         }
     }
 }

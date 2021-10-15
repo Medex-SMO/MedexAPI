@@ -22,7 +22,7 @@ namespace Business.Concrete
             _equipmentDal = equipmentDal;
         }
         [ValidationAspect(typeof(EquipmentValidator))]
-        [SecuredOperation("superuser")]
+        [SecuredOperation("equipment.add,superuser")]
         [CacheRemoveAspect("IEquipmentService.Get")]
         public IResult Add(Equipment equipment)
         {
@@ -30,7 +30,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.EquipmentAdded);
         }
 
-        [SecuredOperation("superuser")]
+        [SecuredOperation("equipment.delete,superuser")]
         [CacheRemoveAspect("IEquipmentService.Get")]
         public IResult Delete(Equipment equipment)
         {
@@ -55,7 +55,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<EquipmentDetailDto>>(_equipmentDal.GetEquipmentsDetails());
         }
 
-        [SecuredOperation("superuser")]
+        [SecuredOperation("equipment.updatesuperuser")]
         [CacheRemoveAspect("IEquipmentService.Get")]
         public IResult Update(Equipment equipment)
         {

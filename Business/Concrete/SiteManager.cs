@@ -22,7 +22,7 @@ namespace Business.Concrete
             _siteDal = siteDal;
         }
         [ValidationAspect(typeof(SiteValidator))]
-        [SecuredOperation("superuser")]
+        [SecuredOperation("site.add,superuser")]
         [CacheRemoveAspect("ISiteService.Get")]
         public IResult Add(Site site)
         {
@@ -30,7 +30,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.SiteAdded);
         }
 
-        [SecuredOperation("superuser")]
+        [SecuredOperation("site.delete,superuser")]
         [CacheRemoveAspect("ISiteService.Get")]
         public IResult Delete(Site site)
         {
@@ -61,7 +61,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<SiteDetailDto>>(_siteDal.GetSitesDetails());
         }
 
-        [SecuredOperation("superuser")]
+        [SecuredOperation("site.update,superuser")]
         [CacheRemoveAspect("ISiteService.Get")]
         public IResult Update(Site site)
         {

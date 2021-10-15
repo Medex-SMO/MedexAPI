@@ -22,7 +22,7 @@ namespace Business.Concrete
             _patientDal = patientDal;
         }
         [ValidationAspect(typeof(PatientValidator))]
-        [SecuredOperation("superuser")]
+        [SecuredOperation("patient.add,superuser")]
         [CacheRemoveAspect("IPatientService.Get")]
         public IResult Add(Patient patient)
         {
@@ -30,7 +30,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.PatientAdded);
         }
 
-        [SecuredOperation("superuser")]
+        [SecuredOperation("patient.delete,superuser")]
         [CacheRemoveAspect("IPatientService.Get")]
         public IResult Delete(Patient patient)
         {
@@ -61,7 +61,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<PatientDetailDto>>(_patientDal.GetPatientsDetails());
         }
 
-        [SecuredOperation("superuser")]
+        [SecuredOperation("patient.update,superuser")]
         [CacheRemoveAspect("IPatientService.Get")]
         public IResult Update(Patient patient)
         {

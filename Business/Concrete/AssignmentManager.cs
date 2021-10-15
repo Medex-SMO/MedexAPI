@@ -22,7 +22,7 @@ namespace Business.Concrete
             _assignmentDal = assignmentDal;
         }
         [ValidationAspect(typeof(AssignmentValidator))]
-        [SecuredOperation("superuser")]
+        [SecuredOperation("assignment.add,superuser")]
         [CacheRemoveAspect("IAssignmentService.Get")]
         public IResult Add(Assignment assignment)
         {
@@ -30,7 +30,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.AssignmentAdded);
         }
 
-        [SecuredOperation("superuser")]
+        [SecuredOperation("assignment.delete,superuser")]
         [CacheRemoveAspect("IAssignmentService.Get")]
         public IResult Delete(Assignment assignment)
         {
@@ -55,7 +55,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Assignment>(_assignmentDal.Get(b => b.Id == id));
         }
 
-        [SecuredOperation("superuser")]
+        [SecuredOperation("assignment.update,superuser")]
         [CacheRemoveAspect("IAssignmentService.Get")]
         public IResult Update(Assignment assignment)
         {

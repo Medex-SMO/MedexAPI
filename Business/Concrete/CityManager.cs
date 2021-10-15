@@ -22,7 +22,7 @@ namespace Business.Concrete
             _cityDal = cityDal;
         }
         [ValidationAspect(typeof(CityValidator))]
-        [SecuredOperation("superuser")]
+        [SecuredOperation("city.add,superuser")]
         [CacheRemoveAspect("ICityService.Get")]
         public IResult Add(City city)
         {
@@ -30,7 +30,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CityAdded);
         }
 
-        [SecuredOperation("superuser")]
+        [SecuredOperation("city.delete,superuser")]
         [CacheRemoveAspect("ICityService.Get")]
         public IResult Delete(City city)
         {
@@ -50,7 +50,7 @@ namespace Business.Concrete
             return new SuccessDataResult<City>(_cityDal.Get(b => b.Id == id));
         }
 
-        [SecuredOperation("superuser")]
+        [SecuredOperation("city.update,superuser")]
         [CacheRemoveAspect("ICityService.Get")]
         public IResult Update(City city)
         {
