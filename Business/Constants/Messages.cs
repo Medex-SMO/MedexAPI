@@ -56,5 +56,14 @@ namespace Business.Constants
         public static string CityDeleted = "The city has been deleted to DB.";
         public static string CityListed = "City listed.";
         public static string CityUpdated = "The city has been updated to DB.";
+
+        public static string UserOperationClaimAdded = "The user operation claim has been added to DB.";
+        public static string UserOperationClaimUpdated = "The user operation claim has been updated to DB.";
+        public static string UserOperationClaimDeleted = "The user operation claim has been deleted to DB.";
+
+        public static string OperationClaimAdded = "The operation claim has been added to DB.";
+        public static string OperationClaimUpdated = "The operation claim has been updated to DB.";
+        public static string OperationClaimDeleted = "The operation claim has been deleted to DB.";
+
     }
 }
