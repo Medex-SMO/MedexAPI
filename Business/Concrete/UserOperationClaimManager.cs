@@ -61,5 +61,11 @@ namespace Business.Concrete
             _userOperationClaimDal.Delete(userOperationClaim);
             return new SuccessResult(Messages.UserOperationClaimDeleted);
         }
+
+        [SecuredOperation("superuser")]
+        public IDataResult<UserOperationClaim> GetByUserId(int userId)
+        {
+            return new SuccessDataResult<UserOperationClaim>(_userOperationClaimDal.Get(u => u.UserId == userId));
+        }
     }
 }
