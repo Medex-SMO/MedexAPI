@@ -15,5 +15,6 @@ namespace Business.Abstract
         IDataResult<Visit> GetById(int id);
         IDataResult<List<Visit>> GetAll();
         IDataResult<List<VisitDetailDto>> GetVisitsDetails();
+        IDataResult<List<VisitDetailDto>> GetVisitsDetailsByUserId(int userId);
     }
 }

@@ -47,13 +47,13 @@ namespace Business.Concrete
         [CacheAspect]
         public IDataResult<List<Visit>> GetAll()
         {
-            return new SuccessDataResult<List<Entities.Concrete.Visit>>(_visitDal.GetAll(), Messages.VisitListed);
+            return new SuccessDataResult<List<Visit>>(_visitDal.GetAll(), Messages.VisitListed);
         }
 
         [CacheAspect]
         public IDataResult<Visit> GetById(int id)
         {
-            return new SuccessDataResult<Entities.Concrete.Visit>(_visitDal.Get(b => b.Id == id));
+            return new SuccessDataResult<Visit>(_visitDal.Get(b => b.Id == id));
         }
 
         [SecuredOperation("visit.update,superuser")]
@@ -62,6 +62,11 @@ namespace Business.Concrete
         {
             _visitDal.Update(visit);
             return new SuccessResult(Messages.VisitUpdated);
+        }
+
+        public IDataResult<List<VisitDetailDto>> GetVisitsDetailsByUserId(int userId)
+        {
+            return new SuccessDataResult<List<VisitDetailDto>>(_visitDal.GetVisitsDetails(v => v.UserId == userId), Messages.VisitListed);
         }
     }
 }
