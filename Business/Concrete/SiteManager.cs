@@ -23,7 +23,7 @@ namespace Business.Concrete
         }
         [ValidationAspect(typeof(SiteValidator))]
         [SecuredOperation("site.add,superuser")]
-        [CacheRemoveAspect("ISiteService.Get")]
+        [CacheRemoveAspect("ISiteService.Get,IPatientService.Get,IAssignmentService.Get,IVisitService.Get")]
         public IResult Add(Site site)
         {
             _siteDal.Add(site);
@@ -31,7 +31,7 @@ namespace Business.Concrete
         }
 
         [SecuredOperation("site.delete,superuser")]
-        [CacheRemoveAspect("ISiteService.Get")]
+        [CacheRemoveAspect("ISiteService.Get,IPatientService.Get,IAssignmentService.Get,IVisitService.Get")]
         public IResult Delete(Site site)
         {
             _siteDal.Delete(site);
@@ -62,7 +62,7 @@ namespace Business.Concrete
         }
 
         [SecuredOperation("site.update,superuser")]
-        [CacheRemoveAspect("ISiteService.Get")]
+        [CacheRemoveAspect("ISiteService.Get,IPatientService.Get,IAssignmentService.Get,IVisitService.Get")]
         public IResult Update(Site site)
         {
             _siteDal.Update(site);

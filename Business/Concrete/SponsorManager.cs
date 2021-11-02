@@ -22,7 +22,7 @@ namespace Business.Concrete
         }
         [ValidationAspect(typeof(SponsorValidator))]
         [SecuredOperation("sponsor.add,superuser")]
-        [CacheRemoveAspect("ISponsorService.Get")]
+        [CacheRemoveAspect("ISponsorService.Get,IStudyService.Get,ISiteService.Get,IPatientService.Get,IAssignmentService.Get,IVisitService.Get")]
         public IResult Add(Sponsor sponsor)
         {
             _sponsorDal.Add(sponsor);
@@ -30,7 +30,7 @@ namespace Business.Concrete
         }
 
         [SecuredOperation("sponsor.delete,superuser")]
-        [CacheRemoveAspect("ISponsorService.Get")]
+        [CacheRemoveAspect("ISponsorService.Get,IStudyService.Get,ISiteService.Get,IPatientService.Get,IAssignmentService.Get,IVisitService.Get")]
         public IResult Delete(Sponsor sponsor)
         {
             _sponsorDal.Delete(sponsor);
@@ -50,7 +50,7 @@ namespace Business.Concrete
         }
 
         [SecuredOperation("sponsor.update,superuser")]
-        [CacheRemoveAspect("ISponsorService.Get")]
+        [CacheRemoveAspect("ISponsorService.Get,IStudyService.Get,ISiteService.Get,IPatientService.Get,IAssignmentService.Get,IVisitService.Get")]
         public IResult Update(Sponsor sponsor)
         {
             _sponsorDal.Update(sponsor);

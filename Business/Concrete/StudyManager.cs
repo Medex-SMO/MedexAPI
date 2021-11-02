@@ -23,7 +23,7 @@ namespace Business.Concrete
         }
         [ValidationAspect(typeof(StudyValidator))]
         [SecuredOperation("study.add,superuser")]
-        [CacheRemoveAspect("IStudyService.Get")]
+        [CacheRemoveAspect("IStudyService.Get,ISiteService.Get,IPatientService.Get,IAssignmentService.Get,IVisitService.Get")]
         public IResult Add(Study study)
         {
             _studyDal.Add(study);
@@ -31,7 +31,7 @@ namespace Business.Concrete
         }
 
         [SecuredOperation("study.delete,superuser")]
-        [CacheRemoveAspect("IStudyService.Get")]
+        [CacheRemoveAspect("IStudyService.Get,ISiteService.Get,IPatientService.Get,IAssignmentService.Get,IVisitService.Get")]
         public IResult Delete(Study study)
         {
             _studyDal.Delete(study);
@@ -63,7 +63,7 @@ namespace Business.Concrete
         }
 
         [SecuredOperation("study.update,superuser")]
-        [CacheRemoveAspect("IStudyService.Get")]
+        [CacheRemoveAspect("IStudyService.Get,ISiteService.Get,IPatientService.Get,IAssignmentService.Get,IVisitService.Get")]
         public IResult Update(Study study)
         {
             _studyDal.Update(study);

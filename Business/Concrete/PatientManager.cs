@@ -23,6 +23,7 @@ namespace Business.Concrete
         }
         [ValidationAspect(typeof(PatientValidator))]
         [SecuredOperation("patient.add,superuser")]
+        [CacheRemoveAspect("IPatientService.Get,IVisitService.Get")]
         [CacheRemoveAspect("IPatientService.Get")]
         public IResult Add(Patient patient)
         {
@@ -31,6 +32,7 @@ namespace Business.Concrete
         }
 
         [SecuredOperation("patient.delete,superuser")]
+        [CacheRemoveAspect("IPatientService.Get,IVisitService.Get")]
         [CacheRemoveAspect("IPatientService.Get")]
         public IResult Delete(Patient patient)
         {
@@ -62,6 +64,7 @@ namespace Business.Concrete
         }
 
         [SecuredOperation("patient.update,superuser")]
+        [CacheRemoveAspect("IPatientService.Get,IVisitService.Get")]
         [CacheRemoveAspect("IPatientService.Get")]
         public IResult Update(Patient patient)
         {

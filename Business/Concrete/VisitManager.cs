@@ -22,7 +22,7 @@ namespace Business.Concrete
             _visitDal = visitDal;
         }
         [ValidationAspect(typeof(VisitValidator))]
-        [SecuredOperation("visit.add,superuser")]
+        [SecuredOperation("visit.add,superuser,sitecoordinator")]
         [CacheRemoveAspect("IVisitService.Get")]
         public IResult Add(Visit visit)
         {
@@ -30,7 +30,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.VisitAdded);
         }
 
-        [SecuredOperation("visit.delete,superuser")]
+        [SecuredOperation("visit.delete,superuser,sitecoordinator")]
         [CacheRemoveAspect("IVisitService.Get")]
         public IResult Delete(Visit visit)
         {
@@ -56,7 +56,7 @@ namespace Business.Concrete
             return new SuccessDataResult<Visit>(_visitDal.Get(b => b.Id == id));
         }
 
-        [SecuredOperation("visit.update,superuser")]
+        [SecuredOperation("visit.update,superuser,sitecoordinator")]
         [CacheRemoveAspect("IVisitService.Get")]
         public IResult Update(Visit visit)
         {
