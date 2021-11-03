@@ -13,6 +13,9 @@ namespace Business.Abstract
         IResult Update(Assignment assignment);
         IResult Delete(Assignment assignment);
         IDataResult<Assignment> GetById(int id);
+        IDataResult<List<AssignmentDetailDto>> GetSponsorsByUserId(int userId);
+        IDataResult<List<AssignmentDetailDto>> GetStudiesByUserIdAndSponsorName(int userId, string sponsorName);
+        IDataResult<List<AssignmentDetailDto>> GetSitesByUserIdAndSponsorNameAndProtocolCode(int userId, string sponsorName, string protocolCode);
         IDataResult<List<Assignment>> GetAll();
         IDataResult<List<AssignmentDetailDto>> GetAssignmentsDetails();
     }

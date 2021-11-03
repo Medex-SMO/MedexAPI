@@ -52,7 +52,25 @@ namespace Business.Concrete
         [CacheAspect]
         public IDataResult<Assignment> GetById(int id)
         {
-            return new SuccessDataResult<Assignment>(_assignmentDal.Get(b => b.Id == id));
+            return new SuccessDataResult<Assignment>(_assignmentDal.Get(a => a.Id == id));
+        }
+
+        [CacheAspect]
+        public IDataResult<List<AssignmentDetailDto>> GetSponsorsByUserId(int userId)
+        {
+            return new SuccessDataResult<List<AssignmentDetailDto>>(_assignmentDal.GetAssignmentsDetails(a => a.UserId == userId));
+        }
+
+        [CacheAspect]
+        public IDataResult<List<AssignmentDetailDto>> GetStudiesByUserIdAndSponsorName(int userId, string sponsorName)
+        {
+            return new SuccessDataResult<List<AssignmentDetailDto>>(_assignmentDal.GetAssignmentsDetails(a => a.UserId == userId && a.SponsorName == sponsorName));
+        }
+
+        [CacheAspect]
+        public IDataResult<List<AssignmentDetailDto>> GetSitesByUserIdAndSponsorNameAndProtocolCode(int userId, string sponsorName, string protocolCode)
+        {
+            return new SuccessDataResult<List<AssignmentDetailDto>>(_assignmentDal.GetAssignmentsDetails(a => a.UserId == userId && a.SponsorName == sponsorName && a.ProtocolCode == protocolCode));
         }
 
         [SecuredOperation("assignment.update,superuser")]

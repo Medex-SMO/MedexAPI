@@ -8,6 +8,8 @@ namespace Entities.Concrete
     public class Assignment : IEntity
     {
         public int Id { get; set; }
+        public int SponsorId { get; set; }
+        public int StudyId { get; set; }
         public int SiteId { get; set; }
         public int UserId { get; set; }
         public string CraName { get; set; }

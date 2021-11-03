@@ -84,5 +84,41 @@ namespace WebAPI.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpGet("getsponsorsbyuserid")]
+        public IActionResult GetSponsorsByUserId(int userId)
+        {
+            var result = _assignmentService.GetSponsorsByUserId(userId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
+
+        [HttpGet("getsponsorsbyuseridandsponsorname")]
+        public IActionResult GetSponsorsByUserIdAndSponsorName(int userId, string sponsorName)
+        {
+            var result = _assignmentService.GetStudiesByUserIdAndSponsorName(userId, sponsorName);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
+
+        [HttpGet("getsponsorsbyuseridandsponsornameandprotocolcode")]
+        public IActionResult GetSitesByUserIdAndSponsorNameAndProtocolCode(int userId, string sponsorName, string protocolCode)
+        {
+            var result = _assignmentService.GetSitesByUserIdAndSponsorNameAndProtocolCode(userId, sponsorName, protocolCode);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
     }
 }

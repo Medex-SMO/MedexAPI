@@ -16,14 +16,22 @@ namespace DataAccess.Concrete.EntityFramework
             using (var context = new MedexDbContext())
             {
                 var result = from assignment in context.Assignments
-                             join site in context.Sites
-                                 on assignment.SiteId equals site.Id
+                             join sponsors in context.Sponsors
+                                 on assignment.SponsorId equals sponsors.Id
+                             join studies in context.Studies
+                                 on assignment.StudyId equals studies.Id
+                             join sites in context.Sites
+                                 on assignment.SiteId equals sites.Id
                              join users in context.Users
                              on assignment.UserId equals users.Id
                              select new AssignmentDetailDto
                              {
                                  Id = assignment.Id,
-                                 SiteNumber = site.SiteNumber,
+                                 UserId = users.Id,
+                                 SponsorName = sponsors.Name,
+                                 ProtocolCode = studies.ProtocolCode,
+                                 SiteName = sites.SiteName,
+                                 SiteNumber = sites.SiteNumber,
                                  Email = users.Email,
                                  CraName = assignment.CraName,
                                  Status = assignment.Status
