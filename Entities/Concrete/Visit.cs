@@ -8,6 +8,9 @@ namespace Entities.Concrete
     public class Visit : IEntity
     {
         public int Id { get; set; }
+        public int SponsorId { get; set; }
+        public int StudyId { get; set; }
+        public int SiteId { get; set; }
         public int UserId { get; set; }
         public int PatientId { get; set; }
         public string VisitNo { get; set; }

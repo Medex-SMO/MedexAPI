@@ -57,6 +57,12 @@ namespace Business.Concrete
         }
 
         [CacheAspect]
+        public IDataResult<Study> GetByProtocolCode(string protocolCode)
+        {
+            return new SuccessDataResult<Study>(_studyDal.Get(b => b.ProtocolCode == protocolCode));
+        }
+
+        [CacheAspect]
         public IDataResult<List<StudyDetailDto>> GetStudiesDetails()
         {
             return new SuccessDataResult<List<StudyDetailDto>>(_studyDal.GetStudiesDetails());

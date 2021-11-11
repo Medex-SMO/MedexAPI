@@ -12,6 +12,7 @@ namespace Business.Abstract
         IResult Update(Sponsor sponsor);
         IResult Delete(Sponsor sponsor);
         IDataResult<Sponsor> GetById(int id);
+        IDataResult<Sponsor> GetByName(string name);
         IDataResult<List<Sponsor>> GetAll();
     }
 }

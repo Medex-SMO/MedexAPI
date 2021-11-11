@@ -50,6 +50,13 @@ namespace Business.Concrete
             return new SuccessDataResult<Site>(_siteDal.Get(b => b.Id == id));
         }
 
+        [CacheAspect]
+        public IDataResult<Site> GetBySiteNumber(string siteNumber)
+        {
+            return new SuccessDataResult<Site>(_siteDal.Get(b => b.SiteNumber == siteNumber));
+        }
+
+        [CacheAspect]
         public IDataResult<List<Site>> GetSitesByStudyId(int studyId)
         {
             return new SuccessDataResult<List<Site>>(_siteDal.GetAll(s => s.StudyId == studyId));

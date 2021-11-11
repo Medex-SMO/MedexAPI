@@ -63,6 +63,17 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("getbyprotocolcode")]
+        public IActionResult GetByProtocolCode(string protocolCode)
+        {
+            var result = _studyService.GetByProtocolCode(protocolCode);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
         [HttpGet("getall")]
         public IActionResult GetAll()
         {

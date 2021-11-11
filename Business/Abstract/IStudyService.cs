@@ -13,6 +13,7 @@ namespace Business.Abstract
         IResult Update(Study study);
         IResult Delete(Study study);
         IDataResult<Study> GetById(int id);
+        IDataResult<Study> GetByProtocolCode(string protocolCode);
         IDataResult<List<Study>> GetAll();
         IDataResult<List<Study>> GetStudiesBySponsorId(int sponsorId);
         IDataResult<List<StudyDetailDto>> GetStudiesDetails();

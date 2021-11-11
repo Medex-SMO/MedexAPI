@@ -52,14 +52,22 @@ namespace Business.Concrete
             return new SuccessDataResult<Patient>(_patientDal.Get(b => b.Id == id));
         }
 
+        [CacheAspect]
         public IDataResult<List<Patient>> GetPatientsBySiteId(int siteId)
         {
             return new SuccessDataResult<List<Patient>>(_patientDal.GetAll(s => s.SiteId == siteId));
         }
 
+        [CacheAspect]
         public IDataResult<List<PatientDetailDto>> GetPatientsBySiteName(string siteName)
         {
             return new SuccessDataResult<List<PatientDetailDto>>(_patientDal.GetPatientsDetails(s => s.SiteName == siteName));
+        }
+
+        [CacheAspect]
+        public IDataResult<List<PatientDetailDto>> GetPatientsBySiteNumber(string siteNumber)
+        {
+            return new SuccessDataResult<List<PatientDetailDto>>(_patientDal.GetPatientsDetails(s => s.SiteNumber == siteNumber));
         }
 
         [CacheAspect]

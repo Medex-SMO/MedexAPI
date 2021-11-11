@@ -15,6 +15,7 @@ namespace Business.Abstract
         IDataResult<Patient> GetById(int id);
         IDataResult<List<Patient>> GetPatientsBySiteId(int siteId);
         IDataResult<List<PatientDetailDto>> GetPatientsBySiteName(string siteName);
+        IDataResult<List<PatientDetailDto>> GetPatientsBySiteNumber(string siteNumber);
         IDataResult<List<Patient>> GetAll();
         IDataResult<List<PatientDetailDto>> GetPatientsDetails();
     }

@@ -75,6 +75,16 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [HttpGet("getbysitenumber")]
+        public IActionResult GetBySiteNumber(string siteNumber)
+        {
+            var result = _siteService.GetBySiteNumber(siteNumber);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
         [HttpGet("getall")]
         public IActionResult GetAll()
         {

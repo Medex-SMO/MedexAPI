@@ -18,13 +18,23 @@ namespace DataAccess.Concrete.EntityFramework
                 var result = from visit in context.Visits
                              join patients in context.Patients
                              on visit.PatientId equals patients.Id
-                             join user in context.Users
-                             on visit.UserId equals user.Id
+                             join users in context.Users
+                             on visit.UserId equals users.Id
+                             join sponsors in context.Sponsors
+                             on visit.SponsorId equals sponsors.Id
+                             join studies in context.Studies
+                             on visit.StudyId equals studies.Id
+                             join sites in context.Sites
+                             on visit.SiteId equals sites.Id
                              select new VisitDetailDto
                              {
                                  Id = visit.Id,
-                                 UserId = user.Id,
-                                 Name = user.FirstName + " " + user.LastName,
+                                 SponsorName = sponsors.Name,
+                                 ProtocolCode = studies.ProtocolCode,
+                                 SiteName = sites.SiteName,
+                                 SiteNumber = sites.SiteNumber,
+                                 UserId = users.Id,
+                                 Name = users.FirstName + " " + users.LastName,
                                  SubjectNo = patients.SubjectNo,
                                  VisitNo = visit.VisitNo,
                                  VisitDate = visit.VisitDate,

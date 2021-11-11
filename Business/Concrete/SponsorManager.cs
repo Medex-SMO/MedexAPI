@@ -49,6 +49,12 @@ namespace Business.Concrete
             return new SuccessDataResult<Sponsor>(_sponsorDal.Get(b => b.Id == id));
         }
 
+        [CacheAspect]
+        public IDataResult<Sponsor> GetByName(string name)
+        {
+            return new SuccessDataResult<Sponsor>(_sponsorDal.Get(b => b.Name == name));
+        }
+
         [SecuredOperation("sponsor.update,superuser")]
         [CacheRemoveAspect("ISponsorService.Get,IStudyService.Get,ISiteService.Get,IPatientService.Get,IAssignmentService.Get,IVisitService.Get")]
         public IResult Update(Sponsor sponsor)
