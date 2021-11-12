@@ -17,5 +17,7 @@ namespace Business.Abstract
         IDataResult<List<Site>> GetAll();
         IDataResult<List<Site>> GetSitesByStudyId(int studyId);
         IDataResult<List<SiteDetailDto>> GetSitesDetails();
+        IDataResult<List<SiteDetailDto>> GetSitesDetailsBySiteNumber(string siteNumber);
+        IDataResult<List<SiteDetailDto>> GetSitesDetailsByUserId(int userId);
     }
 }

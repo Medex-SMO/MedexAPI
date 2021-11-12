@@ -12,7 +12,6 @@ namespace Entities.Concrete
         public int StudyId { get; set; }
         public int SiteId { get; set; }
         public int UserId { get; set; }
-        public string CraName { get; set; }
         public bool Status { get; set; }
     }
 }

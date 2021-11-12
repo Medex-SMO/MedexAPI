@@ -33,7 +33,6 @@ namespace DataAccess.Concrete.EntityFramework
                                  SiteName = sites.SiteName,
                                  SiteNumber = sites.SiteNumber,
                                  Email = users.Email,
-                                 CraName = assignment.CraName,
                                  Status = assignment.Status
                              };
                 return filter == null ? result.ToList() : result.Where(filter).ToList();

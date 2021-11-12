@@ -17,9 +17,11 @@ namespace Business.Concrete
     public class SiteManager : ISiteService
     {
         ISiteDal _siteDal;
-        public SiteManager(ISiteDal siteDal)
+        IAssignmentDal _assignmentDal;
+        public SiteManager(ISiteDal siteDal, IAssignmentDal assignmentDal)
         {
             _siteDal = siteDal;
+            _assignmentDal = assignmentDal;
         }
         [ValidationAspect(typeof(SiteValidator))]
         [SecuredOperation("site.add,superuser")]
@@ -66,6 +68,26 @@ namespace Business.Concrete
         public IDataResult<List<SiteDetailDto>> GetSitesDetails()
         {
             return new SuccessDataResult<List<SiteDetailDto>>(_siteDal.GetSitesDetails());
+        }
+
+        [CacheAspect]
+        public IDataResult<List<SiteDetailDto>> GetSitesDetailsBySiteNumber(string siteNumber)
+        {
+            return new SuccessDataResult<List<SiteDetailDto>>(_siteDal.GetSitesDetails(s => s.SiteNumber == siteNumber));
+        }
+
+        [CacheAspect]
+        public IDataResult<List<SiteDetailDto>> GetSitesDetailsByUserId(int userId)
+        {
+            List<AssignmentDetailDto> assignment = _assignmentDal.GetAssignmentsDetails(a => a.UserId == userId);
+            List<SiteDetailDto> sites = new List<SiteDetailDto>();
+
+            foreach (var item in assignment)
+            {
+                sites.Add(_siteDal.GetSiteDetails(s => s.SiteNumber == item.SiteNumber));
+            }
+
+            return new SuccessDataResult<List<SiteDetailDto>>(sites);
         }
 
         [SecuredOperation("site.update,superuser")]

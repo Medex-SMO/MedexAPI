@@ -11,5 +11,6 @@ namespace DataAccess.Abstract
     public interface ISiteDal : IEntityRepository<Site>
     {
         List<SiteDetailDto> GetSitesDetails(Expression<Func<SiteDetailDto, bool>> filter = null);
+        SiteDetailDto GetSiteDetails(Expression<Func<SiteDetailDto, bool>> filter = null);
     }
 }

@@ -10,7 +10,7 @@ namespace Business.ValidationRules.FluentValidation
     {
         public AssignmentValidator()
         {
-            RuleFor(a => a.CraName).NotEmpty();
+
         }
     }
 }

@@ -14,7 +14,6 @@ namespace Entities.DTOs
         public string SiteName { get; set; }
         public string SiteNumber { get; set; }
         public string Email{ get; set; }
-        public string CraName { get; set; }
         public bool Status { get; set; }
     }
 }
