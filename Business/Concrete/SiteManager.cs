@@ -90,7 +90,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<SiteDetailDto>>(sites);
         }
 
-        [SecuredOperation("site.update,superuser")]
+        [SecuredOperation("site.update,superuser,sitecoordinator")]
         [CacheRemoveAspect("ISiteService.Get,IPatientService.Get,IAssignmentService.Get,IVisitService.Get")]
         public IResult Update(Site site)
         {
